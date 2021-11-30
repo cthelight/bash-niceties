@@ -1,4 +1,4 @@
-. niceties_helper_funcs.bash_helper
+. "$(dirname $BASH_SOURCE[0])/niceties_helper_funcs.bash_helper"
 
 rus () {
     local RUS_DELAY=0
