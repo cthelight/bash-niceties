@@ -1,0 +1,84 @@
+# echo helper that sets/resets the color for us
+# Args:
+# $1: message to print
+# $2: color
+#   - Black
+#   - Red
+#   - Green
+#   - Brown/Orange (either produces the same output color)
+#   - Blue
+#   - Purple
+#   - Cyan
+#   - Light Gray
+#   - Dark Gray
+#   - Light Red
+#   - Light Green
+#   - Yellow
+#   - Light Blue
+#   - Light Purple
+#   - Light Cyan
+#   - White
+niceties_helper_color_echo () {
+    local echo_color='placeholder'
+    local NO_COLOR='\033[0m'
+    if [[ $# -gt 1 ]]; then
+        case $2 in
+            "Black")
+                echo_color='\033[0;30m'
+                ;;
+            "Red")
+                echo_color='\033[0;31m'
+                ;;
+            "Green")
+                echo_color='\033[0;32m'
+                ;;
+            "Brown" | "Orange")
+                echo_color='\033[0;33m'
+                ;;
+            "Blue")
+                echo_color='\033[0;34m'
+                ;;
+            "Purple")
+                echo_color='\033[0;35m'
+                ;;
+            "Cyan")
+                echo_color='\033[0;36m'
+                ;;
+            "Light Gray")
+                echo_color='\033[0;37m'
+                ;;
+            "Dark Gray")
+                echo_color='\033[1;30m'
+                ;;
+            "Light Red")
+                echo_color='\033[1;31m'
+                ;;
+            "Light Green")
+                echo_color='\033[1;32m'
+                ;;
+            "Yellow")
+                echo_color='\033[1;33m'
+                ;;
+            "Light Blue")
+                echo_color='\033[1;34m'
+                ;;
+            "Light Purple")
+                echo_color='\033[1;35m'
+                ;;
+            "Light Cyan")
+                echo_color='\033[1;36m'
+                ;;
+            "White")
+                echo_color='\033[1;37m'
+                ;;
+            *)
+                # No color in default case
+                echo_color="$NO_COLOR"
+                ;;
+        esac
+    else
+        echo_color="$NO_COLOR"
+    fi
+    
+    echo -en "${echo_color}${1}${NO_COLOR}"
+}
