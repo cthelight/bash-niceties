@@ -2,8 +2,8 @@
 
 This project contains a collection of bash functions (and any required helpers) that have been found useful over the years.
 
-Current members:
- - rus
+## Current members:
+ - `rus`
     - [R]un [U]ntil [S]uccess
     - Prepend 'rus' before any command to run repeatedly until success.
         - Ex: rus cat /tmp/myfile
@@ -12,3 +12,6 @@ Current members:
         - -d &lt;int&gt; Delay, where &lt;int&gt; represents how many secs to sleep between attempts
         - -v Increase amount of info printed during execution
         - -m &lt;int&gt; Maximum allowed iterations, where &lt;int&gt; represents how many iterations to allow before quiting
+
+## Useage:
+To use these niceties, either source specific `*.bash` files from `src/`, or simply source `include-all.bash` in your `.bashrc` (or similar). The benefit to `include-all.bash` is that it includes all niceties in one shot.
